@@ -38,14 +38,13 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     DO = 258,
-     WHILE = 259,
-     ID = 260,
-     NUMBER = 261,
+     WHILE = 258,
+     ID = 259,
+     NUMBER = 260,
+     LT = 261,
      SEMI = 262,
      LPAREN = 263,
-     RPAREN = 264,
-     LT = 265
+     RPAREN = 264
    };
 #endif
 

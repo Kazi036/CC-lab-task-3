@@ -1,30 +1,25 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-
-int yylex();
 void yyerror(const char *s);
+int yylex();
 %}
 
-%token DO WHILE ID NUMBER SEMI LPAREN RPAREN LT
+%token WHILE ID NUMBER LT SEMI LPAREN RPAREN
 
 %start stmt
 
 %%
 
 stmt:
-    DO stmt_block WHILE LPAREN condition RPAREN SEMI {
-        printf("Parsing Finished\n");
+    WHILE LPAREN condition RPAREN SEMI
+    {
+        printf("Parsing Khatam.\n");
     }
     ;
 
-stmt_block:
-    ID SEMI        // just a simple statement like x;
-    ;
-
 condition:
-    ID LT expr
-    ;
+    ID LT expr ;
 
 expr:
     ID
